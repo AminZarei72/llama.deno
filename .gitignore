@@ -1,0 +1,5 @@
+.vscode
+tmp
+server
+llama.cpp.modified/liblama.so
+documents.txt

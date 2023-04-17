@@ -1,0 +1,31 @@
+{
+  "name": "llama.deno",
+  "author": "aminZarei72",
+  "description": "tiny port to llama.cpp project with Deno ffi library",
+  "tasks": {
+    "dev": "deno run --allow-run --allow-read --allow-net --allow-ffi --unstable  --watch=./src/ ./src/server.ts localhost 5000 ./models/model.ggml.bin ./llama.cpp.modified/liblama  ",
+    "compile":"deno compile --allow-run --allow-read --allow-net --allow-ffi --unstable ./src/server.ts",
+    "compileCLib":"cd llama.cpp.modified && clang++ -std=c++17 -fpic -shared -o liblama.so ggml.o utils.cpp lama.cpp init.cpp predict.cpp"
+
+  }, 
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/aminZarei72/llama.deno",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminZarei72/llama.deno.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aminZarei72/llama.deno/issues"
+  }, 
+  "dependencies": { 
+    "ts-firebase-rules": "^0.1.12"
+  },
+  "keywords": [
+    "deno",
+    "ffi",
+    "llama",
+    "llama.cpp"
+  ]
+
+}
